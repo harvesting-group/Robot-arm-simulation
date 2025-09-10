@@ -1,0 +1,66 @@
+arm_main_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - j2rostop
+    - j3
+    - j4
+    - j6
+    - j7
+    - j8
+  gains:
+    j2rostop:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j8:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+left_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - j1
+    - j11
+  gains:
+    j1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    j11:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+fake_eef_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - j8
+  gains:
+    j8:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

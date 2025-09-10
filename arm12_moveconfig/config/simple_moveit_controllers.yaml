@@ -1,0 +1,25 @@
+controller_list:
+  - name: arm_main_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j2rostop
+      - j3
+      - j4
+      - j6
+      - j7
+      - j8
+  - name: left_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j1
+      - j11
+  - name: fake_eef_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j8

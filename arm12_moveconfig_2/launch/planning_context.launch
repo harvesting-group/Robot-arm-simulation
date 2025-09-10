@@ -1,0 +1,33 @@
+<launch>
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="false"/>
+
+  <!-- The name of the parameter under which the URDF is loaded -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- Load universal robot description format (URDF) -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/arm12.urdf.xacro"/> -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/test.urdf"/> -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/one_red_straw.urdf"/> -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/red_green_no_obstacle.urdf"/> -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/red_no_leaf.urdf"/> -->
+  <!-- <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/red_with_leaf.urdf"/> -->
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find arm12)/urdf/red_in_green.urdf"/>
+  
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="$(arg robot_description)_semantic" textfile="$(find arm12_moveconfig_2)/config/arm12.srdf" />
+
+  <!-- Load updated joint limits (override information from URDF) -->
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load" file="$(find arm12_moveconfig_2)/config/joint_limits.yaml"/>
+    <rosparam command="load" file="$(find arm12_moveconfig_2)/config/cartesian_limits.yaml"/>
+  </group>
+
+  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load" file="$(find arm12_moveconfig_2)/config/kinematics.yaml"/>
+
+  </group>
+
+</launch>

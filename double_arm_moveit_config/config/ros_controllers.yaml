@@ -1,0 +1,112 @@
+left_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - left_joint1
+    - left_joint2
+    - left_joint3
+    - left_joint4
+    - left_joint5
+    - left_joint6
+  gains:
+    left_joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+right_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - right_joint1
+    - right_joint2
+    - right_joint3
+    - right_joint4
+    - right_joint5
+    - right_joint6
+  gains:
+    right_joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+left_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - left_joint7
+    - left_joint8
+  gains:
+    left_joint7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    left_joint8:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+right_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - right_joint7
+    - right_joint8
+  gains:
+    right_joint7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    right_joint8:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
